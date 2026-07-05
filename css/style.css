@@ -60,11 +60,9 @@ body {
   opacity: 0;
   visibility: hidden;
 }
-.loader-logo {
-  font-family: var(--font-display);
-  font-size: 4rem;
-  font-weight: 900;
-  color: var(--gold);
+.loader-logo-img {
+  height: 80px;
+  width: auto;
   animation: pulse 1.2s ease-in-out infinite;
 }
 @keyframes pulse {
@@ -103,12 +101,14 @@ body {
   justify-content: space-between;
 }
 .logo {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 900;
-  color: var(--gold);
   text-decoration: none;
-  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+}
+.logo-img {
+  height: 48px;
+  width: auto;
+  display: block;
 }
 .nav-menu {
   display: flex;
@@ -521,6 +521,39 @@ body {
   object-fit: cover;
   display: block;
 }
+.about-ceo {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: linear-gradient(to right, rgba(10,10,10,0.85), rgba(10,10,10,0.6));
+  padding: 16px 20px;
+  border-left: 3px solid var(--gold);
+  backdrop-filter: blur(8px);
+}
+.about-ceo-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+  flex-shrink: 0;
+}
+.about-ceo-info strong {
+  display: block;
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+.about-ceo-info span {
+  color: var(--gray-light);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 .about-image::after {
   content: '';
   position: absolute;
@@ -595,6 +628,150 @@ body {
   font-size: 0.9rem;
   font-weight: 300;
   line-height: 1.6;
+}
+
+/* ---- Projects Gallery ---- */
+.projects {
+  background: var(--black);
+}
+.section-desc {
+  color: var(--gray-light);
+  font-size: 0.95rem;
+  font-weight: 300;
+  max-width: 600px;
+  margin: 16px auto 0;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.gallery-item {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: var(--transition);
+  background: var(--black-3);
+}
+.gallery-item:hover {
+  border-color: rgba(212,168,71,0.3);
+  transform: scale(1.02);
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.gallery-item-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.8) 0%, transparent 50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transition: var(--transition);
+}
+.gallery-item:hover .gallery-item-overlay {
+  opacity: 1;
+}
+.gallery-item-overlay span {
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.gallery-item-overlay small {
+  color: var(--gray-light);
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+.gallery-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4/3;
+  border: 2px dashed rgba(212,168,71,0.2);
+  color: var(--gray-dark);
+  cursor: pointer;
+  transition: var(--transition);
+  background: transparent;
+}
+.gallery-add:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.gallery-add i {
+  font-size: 2rem;
+}
+
+/* ---- Lightbox ---- */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(0,0,0,0.95);
+  align-items: center;
+  justify-content: center;
+}
+.lightbox.open {
+  display: flex;
+}
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2.5rem;
+  color: var(--white);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  line-height: 1;
+}
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--white);
+  width: 50px;
+  height: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: var(--transition);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-nav:hover {
+  background: var(--gold);
+  color: var(--black);
+  border-color: var(--gold);
+}
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+}
+.lightbox-counter {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--gray);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
 }
 
 /* ---- Countries ---- */
@@ -783,11 +960,9 @@ body {
   gap: 40px;
   padding-bottom: 40px;
 }
-.footer-logo {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 900;
-  color: var(--gold);
+.footer-logo-img {
+  height: 60px;
+  width: auto;
   margin-bottom: 12px;
 }
 .footer-brand p {

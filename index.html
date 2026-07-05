@@ -14,18 +14,19 @@
 
   <!-- Preloader -->
   <div id="preloader">
-    <div class="loader-logo">KD</div>
+    <img src="images/logo.png" alt="KD Investment" class="loader-logo-img">
   </div>
 
   <!-- Navigation -->
   <nav id="navbar">
     <div class="container nav-container">
-      <a href="#" class="logo">KD</a>
+      <a href="#" class="logo"><img src="images/logo.png" alt="KD Investment" class="logo-img"></a>
       <div class="nav-menu" id="navMenu">
         <ul class="nav-links">
           <li><a href="#home" data-i18n="nav.home">Home</a></li>
           <li><a href="#about" data-i18n="nav.about">About</a></li>
           <li><a href="#services" data-i18n="nav.services">Services</a></li>
+          <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
           <li><a href="#countries" data-i18n="nav.countries">Countries</a></li>
           <li><a href="#partners" data-i18n="nav.partners">Partners</a></li>
           <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
@@ -103,6 +104,13 @@
         </div>
         <div class="about-image">
           <img src="images/about-image.jpg" alt="KD Investment Office" class="about-image-img">
+          <div class="about-ceo">
+            <img src="images/ceo.jpg" alt="Keita Daouda - President Directeur Général" class="about-ceo-img">
+            <div class="about-ceo-info">
+              <strong>Keita Daouda</strong>
+              <span data-i18n="about.role">President Directeur Général</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -150,6 +158,29 @@
       </div>
     </div>
   </section>
+
+  <!-- Projects Gallery -->
+  <section id="projects" class="section projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="projects.tag">Our Work</span>
+        <h2 class="section-title" data-i18n="projects.title">Project Gallery</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc" data-i18n="projects.desc">A selection of projects and initiatives we have supported across Africa and international markets.</p>
+      </div>
+      <div class="gallery-grid" id="galleryGrid">
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-close">&times;</button>
+    <button class="lightbox-nav lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <button class="lightbox-nav lightbox-next"><i class="fas fa-chevron-right"></i></button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </div>
 
   <!-- Countries -->
   <section id="countries" class="section countries">
@@ -265,7 +296,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="footer-logo">KD</div>
+          <img src="images/logo.png" alt="KD Investment" class="footer-logo-img">
           <p data-i18n="footer.tagline">Global Investment Fund Raising &amp; Project Management Solutions</p>
         </div>
         <div class="footer-links">
@@ -274,6 +305,7 @@
             <li><a href="#home" data-i18n="nav.home">Home</a></li>
             <li><a href="#about" data-i18n="nav.about">About</a></li>
             <li><a href="#services" data-i18n="nav.services">Services</a></li>
+            <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
             <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
           </ul>
         </div>
