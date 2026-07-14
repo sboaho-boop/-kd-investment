@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KD Investment - Business Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+      padding: 40px;
+      flex-direction: column;
+      gap: 30px;
+    }
+    .card {
+      width: 420px;
+      height: 640px;
+      background: linear-gradient(145deg, #0A0A0A 0%, #1A1A1A 100%);
+      border: 1px solid rgba(212,168,71,0.25);
+      border-radius: 6px;
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold, #D4A847), transparent);
+    }
+    .card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 20%, rgba(212,168,71,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .card-top {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 1;
+    }
+    .card-logo {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+    }
+    .card-company h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #D4A847;
+      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .card-company span {
+      font-size: 0.6rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(212,168,71,0.3), transparent);
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .card-name {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 20px;
+    }
+    .card-name h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .card-name p {
+      font-size: 0.75rem;
+      color: #D4A847;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-top: 4px;
+      font-weight: 400;
+    }
+    .card-contact {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .contact-row i {
+      width: 18px;
+      color: #D4A847;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+    .contact-row span {
+      font-size: 0.72rem;
+      color: #aaa;
+      font-weight: 300;
+    }
+    .contact-row a {
+      font-size: 0.72rem;
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 300;
+      transition: color 0.3s;
+    }
+    .contact-row a:hover { color: #D4A847; }
+    .card-bottom {
+      display: flex;
+      align-items: flex-end;
+      gap: 24px;
+      margin-top: auto;
+      position: relative;
+      z-index: 1;
+      padding-top: 20px;
+    }
+    .card-qr {
+      width: 100px;
+      height: 100px;
+      border: 1px solid rgba(212,168,71,0.15);
+      padding: 4px;
+      background: #fff;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .card-qr img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .card-tagline {
+      font-size: 0.6rem;
+      color: #666;
+      font-weight: 300;
+      line-height: 1.4;
+      letter-spacing: 0.3px;
+    }
+    .card-tagline strong {
+      color: #D4A847;
+      font-weight: 600;
+    }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .card { box-shadow: none; border: 1px solid #ccc; }
+      .noprint { display: none !important; }
+    }
+    @media (max-width: 480px) {
+      .card { width: 100%; height: auto; min-height: 560px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="card-top">
+      <img src="images/logo.png" alt="KD" class="card-logo" onerror="this.style.display='none'">
+      <div class="card-company">
+        <h1>KD Investment<br>Fund Raising &amp;<br>Project Managing SARL</h1>
+        <span>Grand-Bassam, Côte d'Ivoire</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="card-name">
+      <h2>Keita Daouda</h2>
+      <p>President Directeur Général</p>
+    </div>
+
+    <div class="card-contact">
+      <div class="contact-row">
+        <i class="fas fa-phone-alt"></i>
+        <a href="tel:+22503649944">+225 03 64 99 44</a>
+      </div>
+      <div class="contact-row">
+        <i class="fas fa-phone-alt"></i>
+        <a href="tel:+4915217494271">+49 1521 7494271</a>
+      </div>
+      <div class="contact-row">
+        <i class="fas fa-phone-alt"></i>
+        <a href="tel:+27661918927">+27 66 191 8927</a>
+      </div>
+      <div class="contact-row">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:kdinvestmentfundraising032019@yahoo.com">kdinvestmentfundraising032019@yahoo.com</a>
+      </div>
+      <div class="contact-row">
+        <i class="fas fa-globe"></i>
+        <a href="https://kd-investment.vercel.app" target="_blank">kd-investment.vercel.app</a>
+      </div>
+    </div>
+
+    <div class="card-bottom">
+      <div class="card-qr">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://kd-investment.vercel.app&bgcolor=ffffff&color=0a0a0a&margin=10" alt="QR Code">
+      </div>
+      <div class="card-tagline">
+        <strong>Global Investment</strong> Fund Raising<br>
+        &amp; Project Management Solutions<br>
+        <span style="color:#555;font-size:0.55rem;letter-spacing:0.5px;">Connecting investors across Africa &amp; beyond</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="noprint" style="color:#666;font-size:0.8rem;text-align:center;max-width:420px;">
+    <p style="margin-bottom:8px;">Open this page in your browser and print or screenshot.</p>
+    <p style="font-size:0.7rem;color:#444;">Print at 100% scale for actual business card size (420px × 640px = ~11cm × 17cm).</p>
+  </div>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</body>
+</html>
