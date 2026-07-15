@@ -407,6 +407,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function switchLang(lang) {
     currentLang = lang;
     document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.setAttribute('lang', lang);
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       var key = el.getAttribute('data-i18n');
       if (translations[lang] && translations[lang][key]) {
@@ -432,6 +433,15 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('click', function () {
     document.getElementById('langMenu').classList.remove('open');
   });
+
+  /* ---- Auto-detect browser language ---- */
+  var browserLang = (navigator.language || navigator.userLanguage || 'en').substring(0, 2);
+  var supportedLangs = Object.keys(translations);
+  if (supportedLangs.indexOf(browserLang) !== -1) {
+    switchLang(browserLang);
+  } else {
+    switchLang('en');
+  }
 
   /* ---- Contact form ---- */
   document.getElementById('contactForm').addEventListener('submit', function (e) {
@@ -474,7 +484,7 @@ document.addEventListener('DOMContentLoaded', function () {
     galleryImages.forEach(function (img, i) {
       var item = document.createElement('div');
       item.className = 'gallery-item';
-      item.innerHTML = '<img src="' + img.src + '" alt="' + img.label + '"><div class="gallery-item-overlay"><span>' + img.label + '</span><small>' + img.location + '</small></div>';
+      item.innerHTML = '<img src="' + img.src + '" alt="KD Investment ' + img.label + ' - ' + img.location + '"><div class="gallery-item-overlay"><span>' + img.label + '</span><small>' + img.location + '</small></div>';
       item.addEventListener('click', function () { openLightbox(i); });
       grid.appendChild(item);
     });
