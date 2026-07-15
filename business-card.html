@@ -18,316 +18,359 @@
       font-family: 'Inter', sans-serif;
       padding: 40px;
       flex-direction: column;
-      gap: 30px;
+      gap: 40px;
     }
-    .card {
+    .cards-wrapper {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card-side {
       width: 720px;
       height: 420px;
-      background: linear-gradient(160deg, #0A0A0A 0%, #141414 40%, #1A1A1A 100%);
-      border: 1px solid rgba(212,168,71,0.2);
       border-radius: 4px;
-      display: flex;
       position: relative;
       overflow: hidden;
+    }
+    .card-label {
+      text-align: center;
+      color: #666;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .card-label span {
+      color: #D4A847;
+    }
+
+    /* ---- FRONT SIDE ---- */
+    .front {
+      background: linear-gradient(160deg, #0A0A0A 0%, #141414 50%, #1A1A1A 100%);
+      border: 1px solid rgba(212,168,71,0.2);
       box-shadow: 0 20px 60px rgba(0,0,0,0.7);
     }
-    .card::before {
-      content: '';
+    .front-glow {
       position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent 10%, #D4A847 50%, transparent 90%);
-    }
-    .card-bg-accent {
-      position: absolute;
-      right: -80px;
-      top: -80px;
-      width: 300px;
-      height: 300px;
+      right: -100px;
+      top: -100px;
+      width: 400px;
+      height: 400px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(212,168,71,0.06) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(212,168,71,0.07) 0%, transparent 70%);
       pointer-events: none;
     }
-    .card-bg-accent-2 {
+    .front-glow-2 {
       position: absolute;
-      left: -60px;
-      bottom: -60px;
-      width: 200px;
-      height: 200px;
+      left: -80px;
+      bottom: -80px;
+      width: 250px;
+      height: 250px;
       border-radius: 50%;
       background: radial-gradient(circle, rgba(212,168,71,0.04) 0%, transparent 70%);
       pointer-events: none;
     }
-    .card-left {
-      width: 45%;
-      padding: 36px 28px 32px 36px;
-      display: flex;
-      flex-direction: column;
+    .front-border {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 5%, #D4A847 50%, transparent 95%);
+    }
+    .front-content {
       position: relative;
       z-index: 1;
-      border-right: 1px solid rgba(212,168,71,0.1);
-    }
-    .card-left-top {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      margin-bottom: 24px;
-    }
-    .card-logo {
-      width: 50px;
-      height: 50px;
-      object-fit: contain;
-      flex-shrink: 0;
-    }
-    .card-company {
-      flex: 1;
-    }
-    .card-company h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: #D4A847;
-      line-height: 1.3;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .card-company .sub {
-      font-size: 0.55rem;
-      color: #666;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-top: 4px;
-      font-weight: 400;
-    }
-    .card-name-block {
-      flex: 1;
+      height: 100%;
       display: flex;
       flex-direction: column;
+      align-items: center;
       justify-content: center;
+      padding: 40px;
+      text-align: center;
     }
-    .card-name-block h2 {
+    .front-logo {
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+      margin-bottom: 28px;
+    }
+    .front-content h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
+      font-size: 2.2rem;
+      font-weight: 900;
       color: #fff;
-      font-weight: 700;
-      letter-spacing: 0.5px;
+      letter-spacing: 2px;
+      margin-bottom: 4px;
     }
-    .card-name-block .title {
+    .front-content .gold {
+      color: #D4A847;
+    }
+    .front-content .subtitle {
+      font-size: 0.8rem;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 300;
+      margin-bottom: 24px;
+    }
+    .front-divider {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #D4A847, transparent);
+      margin-bottom: 24px;
+    }
+    .front-content .name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .front-content .role {
       font-size: 0.65rem;
       color: #D4A847;
       text-transform: uppercase;
       letter-spacing: 2.5px;
-      margin-top: 4px;
       font-weight: 500;
     }
-    .card-tagline-bottom {
+    .front-content .tagline {
       font-size: 0.55rem;
       color: #555;
-      line-height: 1.4;
-      letter-spacing: 0.3px;
-      margin-top: auto;
-      padding-top: 16px;
+      margin-top: 28px;
+      letter-spacing: 0.5px;
+      max-width: 400px;
+      line-height: 1.5;
     }
-    .card-tagline-bottom strong {
-      color: #D4A847;
-      font-weight: 600;
+
+    /* ---- BACK SIDE ---- */
+    .back {
+      background: linear-gradient(160deg, #0D0D0D 0%, #151515 100%);
+      border: 1px solid rgba(212,168,71,0.15);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
     }
-    .card-right {
-      width: 55%;
-      padding: 36px 36px 32px 28px;
-      display: flex;
-      flex-direction: column;
+    .back-glow {
+      position: absolute;
+      left: -60px;
+      top: -60px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212,168,71,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .back-content {
       position: relative;
       z-index: 1;
+      height: 100%;
+      display: flex;
+      padding: 40px 44px;
+      gap: 36px;
     }
-    .card-right-header {
-      font-size: 0.55rem;
+    .back-left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .back-header {
+      font-size: 0.5rem;
       color: #555;
       text-transform: uppercase;
       letter-spacing: 2px;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
       font-weight: 500;
     }
-    .card-right-header span {
-      color: #D4A847;
-    }
-    .contact-list {
+    .back-header span { color: #D4A847; }
+
+    .back-contact-list {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 14px;
       flex: 1;
     }
-    .contact-item {
+    .back-contact-item {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
-    .contact-item .icon {
-      width: 26px;
-      height: 26px;
+    .back-contact-icon {
+      width: 30px;
+      height: 30px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.65rem;
+      font-size: 0.7rem;
       color: #D4A847;
-      border: 1px solid rgba(212,168,71,0.15);
+      border: 1px solid rgba(212,168,71,0.12);
       border-radius: 50%;
       flex-shrink: 0;
     }
-    .contact-item .info {
-      display: flex;
-      flex-direction: column;
-    }
-    .contact-item .info .label {
-      font-size: 0.5rem;
-      color: #666;
+    .back-contact-info { display: flex; flex-direction: column; }
+    .back-contact-label {
+      font-size: 0.48rem;
+      color: #555;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-    .contact-item .info .value {
+    .back-contact-value {
       font-size: 0.68rem;
       color: #ccc;
       text-decoration: none;
       font-weight: 300;
     }
-    .contact-item .info .value:hover {
-      color: #D4A847;
-    }
-    .card-qr-section {
+    .back-contact-value:hover { color: #D4A847; }
+
+    .back-right {
+      width: 180px;
       display: flex;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
+      border-left: 1px solid rgba(212,168,71,0.08);
+      padding-left: 36px;
       gap: 16px;
-      margin-top: auto;
-      padding-top: 12px;
-      border-top: 1px solid rgba(212,168,71,0.08);
     }
-    .card-qr {
-      width: 64px;
-      height: 64px;
-      flex-shrink: 0;
+    .back-qr {
+      width: 120px;
+      height: 120px;
+      border: 1px solid rgba(212,168,71,0.15);
+      padding: 6px;
+      background: #fff;
+      border-radius: 2px;
     }
-    .card-qr img {
+    .back-qr img {
       width: 100%;
       height: 100%;
       display: block;
-      border-radius: 2px;
     }
-    .card-qr-text {
+    .back-qr-label {
       font-size: 0.5rem;
       color: #555;
-      line-height: 1.4;
-      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+      line-height: 1.5;
     }
-    .card-qr-text strong {
+    .back-qr-label strong {
       color: #D4A847;
       font-weight: 600;
-    }
-    .card-qr-text .url {
-      color: #888;
-      font-size: 0.55rem;
-      text-decoration: none;
       display: block;
-      margin-top: 2px;
+      font-size: 0.55rem;
     }
-    .print-info {
-      color: #666;
-      font-size: 0.8rem;
+
+    .print-note {
+      color: #555;
+      font-size: 0.75rem;
       text-align: center;
       max-width: 720px;
+      line-height: 1.6;
     }
-    .print-info p { margin-bottom: 4px; }
-    .print-info small { font-size: 0.65rem; color: #444; }
+    .print-note small { color: #444; font-size: 0.65rem; }
+
     @media print {
-      body { background: #fff; padding: 0; }
-      .card { box-shadow: none; border: 1px solid #ccc; }
-      .print-info { display: none !important; }
+      body { background: #fff; padding: 20px; gap: 30px; }
+      .card-side { box-shadow: none; }
+      .front { border: 1px solid #ccc; }
+      .back { border: 1px solid #ccc; }
+      .print-note, .card-label { display: none !important; }
     }
-    @media (max-width: 760px) {
-      .card { width: 100%; height: auto; flex-direction: column; }
-      .card-left { width: 100%; border-right: none; border-bottom: 1px solid rgba(212,168,71,0.1); padding: 24px; }
-      .card-right { width: 100%; padding: 24px; }
+    @media (max-width: 780px) {
+      .card-side { width: 100%; height: auto; min-height: 380px; }
+      .back-content { flex-direction: column; padding: 28px; }
+      .back-right { border-left: none; border-top: 1px solid rgba(212,168,71,0.08); padding-left: 0; padding-top: 20px; width: 100%; }
+      .front-content h1 { font-size: 1.6rem; }
     }
   </style>
 </head>
 <body>
 
-  <div class="card">
-    <div class="card-bg-accent"></div>
-    <div class="card-bg-accent-2"></div>
-
-    <div class="card-left">
-      <div class="card-left-top">
-        <img src="images/logo.png" alt="KD" class="card-logo" onerror="this.style.display='none'">
-        <div class="card-company">
-          <h1>KD Investment<br>Fund Raising &amp;<br>Project Managing SARL</h1>
-          <div class="sub">Grand-Bassam, Côte d'Ivoire</div>
-        </div>
-      </div>
-      <div class="card-name-block">
-        <h2>Keita Daouda</h2>
-        <div class="title">President Directeur Général</div>
-      </div>
-      <div class="card-tagline-bottom">
-        <strong>Global Investment</strong> Fund Raising &amp; Project Management Solutions<br>
-        Connecting investors, businesses &amp; strategic partners across Africa and beyond
+  <!-- FRONT -->
+  <div>
+    <div class="card-label">— <span>Front</span> —</div>
+    <div class="card-side front">
+      <div class="front-border"></div>
+      <div class="front-glow"></div>
+      <div class="front-glow-2"></div>
+      <div class="front-content">
+        <img src="images/logo.png" alt="KD" class="front-logo" onerror="this.style.display='none'">
+        <h1>KD <span class="gold">INVESTMENT</span></h1>
+        <div class="subtitle">Fund Raising &amp; Project Managing</div>
+        <div class="front-divider"></div>
+        <div class="name">Keita Daouda</div>
+        <div class="role">President Directeur Général</div>
+        <div class="tagline">Global Investment Fund Raising &amp; Project Management Solutions — Connecting investors, businesses &amp; strategic partners across Africa and beyond</div>
       </div>
     </div>
+  </div>
 
-    <div class="card-right">
-      <div class="card-right-header">Contact <span>Information</span></div>
-      <div class="contact-list">
-        <div class="contact-item">
-          <div class="icon"><i class="fas fa-phone-alt"></i></div>
-          <div class="info">
-            <span class="label">Côte d'Ivoire</span>
-            <a href="tel:+22503649944" class="value">+225 03 64 99 44</a>
+  <!-- BACK -->
+  <div>
+    <div class="card-label">— <span>Back</span> —</div>
+    <div class="card-side back">
+      <div class="back-glow"></div>
+      <div class="back-content">
+        <div class="back-left">
+          <div class="back-header">Contact <span>Information</span></div>
+          <div class="back-contact-list">
+            <div class="back-contact-item">
+              <div class="back-contact-icon"><i class="fas fa-phone-alt"></i></div>
+              <div class="back-contact-info">
+                <span class="back-contact-label">Côte d'Ivoire</span>
+                <a href="tel:+22503649944" class="back-contact-value">+225 03 64 99 44</a>
+              </div>
+            </div>
+            <div class="back-contact-item">
+              <div class="back-contact-icon"><i class="fas fa-phone-alt"></i></div>
+              <div class="back-contact-info">
+                <span class="back-contact-label">Germany</span>
+                <a href="tel:+4915217494271" class="back-contact-value">+49 1521 7494271</a>
+              </div>
+            </div>
+            <div class="back-contact-item">
+              <div class="back-contact-icon"><i class="fas fa-phone-alt"></i></div>
+              <div class="back-contact-info">
+                <span class="back-contact-label">South Africa</span>
+                <a href="tel:+27661918927" class="back-contact-value">+27 66 191 8927</a>
+              </div>
+            </div>
+            <div class="back-contact-item">
+              <div class="back-contact-icon"><i class="fas fa-envelope"></i></div>
+              <div class="back-contact-info">
+                <span class="back-contact-label">Email</span>
+                <a href="mailto:kdinvestmentfundraising032019@yahoo.com" class="back-contact-value">kdinvestmentfundraising032019@yahoo.com</a>
+              </div>
+            </div>
+            <div class="back-contact-item">
+              <div class="back-contact-icon"><i class="fas fa-globe"></i></div>
+              <div class="back-contact-info">
+                <span class="back-contact-label">Website</span>
+                <a href="https://kd-globalinvestment.com" target="_blank" class="back-contact-value">kd-globalinvestment.com</a>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:auto;">
+            <div style="font-size:0.48rem;color:#444;letter-spacing:0.5px;margin-top:12px;">
+              SARL — Grand-Bassam, Côte d'Ivoire
+            </div>
           </div>
         </div>
-        <div class="contact-item">
-          <div class="icon"><i class="fas fa-phone-alt"></i></div>
-          <div class="info">
-            <span class="label">Germany</span>
-            <a href="tel:+4915217494271" class="value">+49 1521 7494271</a>
+        <div class="back-right">
+          <div class="back-qr">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://kd-globalinvestment.com&bgcolor=ffffff&color=0a0a0a&margin=10" alt="QR">
           </div>
-        </div>
-        <div class="contact-item">
-          <div class="icon"><i class="fas fa-phone-alt"></i></div>
-          <div class="info">
-            <span class="label">South Africa</span>
-            <a href="tel:+27661918927" class="value">+27 66 191 8927</a>
+          <div class="back-qr-label">
+            Scan to visit<br>
+            <strong>KD Investment</strong>
+            kd-globalinvestment.com
           </div>
-        </div>
-        <div class="contact-item">
-          <div class="icon"><i class="fas fa-envelope"></i></div>
-          <div class="info">
-            <span class="label">Email</span>
-            <a href="mailto:kdinvestmentfundraising032019@yahoo.com" class="value">kdinvestmentfundraising032019@yahoo.com</a>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="icon"><i class="fas fa-globe"></i></div>
-          <div class="info">
-            <span class="label">Website</span>
-            <a href="https://kd-globalinvestment.com" target="_blank" class="value">kd-globalinvestment.com</a>
-          </div>
-        </div>
-      </div>
-      <div class="card-qr-section">
-        <div class="card-qr">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=64x64&data=https://kd-globalinvestment.com&bgcolor=ffffff&color=0a0a0a&margin=10" alt="QR">
-        </div>
-        <div class="card-qr-text">
-          Scan to visit website
-          <strong>KD Investment</strong>
-          <span class="url">kd-globalinvestment.com</span>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="print-info">
-    <p>Print at 100% scale for actual business card size (720px × 420px — fits standard landscape card).</p>
-    <small>Design matches website branding. QR code links to the live site.</small>
+  <div class="print-note">
+    Print both sides separately at 100% scale. Front = logo &amp; brand. Back = contact info &amp; QR code.<br>
+    <small>Design matches website branding. QR code links to https://kd-globalinvestment.com</small>
   </div>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
