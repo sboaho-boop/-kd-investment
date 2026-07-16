@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4A847"/>
+      <stop offset="50%" stop-color="#F5D980"/>
+      <stop offset="100%" stop-color="#B8922E"/>
+    </linearGradient>
+    <linearGradient id="goldDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B8922E"/>
+      <stop offset="100%" stop-color="#8A6F1A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Icon mark -->
+  <g transform="translate(12, 10)">
+    <!-- Outer circle -->
+    <circle cx="50" cy="50" r="48" fill="none" stroke="url(#gold)" stroke-width="2"/>
+    <circle cx="50" cy="50" r="42" fill="none" stroke="url(#gold)" stroke-width="0.5" opacity="0.3"/>
+
+    <!-- K -->
+    <line x1="30" y1="30" x2="30" y2="70" stroke="url(#gold)" stroke-width="3" stroke-linecap="round"/>
+    <line x1="30" y1="50" x2="52" y2="30" stroke="url(#gold)" stroke-width="3" stroke-linecap="round"/>
+    <line x1="30" y1="50" x2="52" y2="70" stroke="url(#gold)" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- D -->
+    <line x1="62" y1="30" x2="62" y2="70" stroke="url(#gold)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M62 30 Q82 30 82 50 Q82 70 62 70" fill="none" stroke="url(#gold)" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Text -->
+  <g transform="translate(130, 28)">
+    <text x="0" y="0" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="bold" fill="url(#gold)" letter-spacing="4">KD</text>
+    <text x="0" y="22" font-family="Georgia, 'Times New Roman', serif" font-size="9" font-weight="normal" fill="url(#gold)" letter-spacing="1">INVESTMENT</text>
+    <rect x="0" y="30" width="180" height="0.5" fill="url(#gold)" opacity="0.4"/>
+    <text x="0" y="44" font-family="Arial, sans-serif" font-size="6.5" fill="#aaa" letter-spacing="0.5" font-weight="300">FUND RAISING &amp; PROJECT MANAGING</text>
+    <text x="0" y="54" font-family="Arial, sans-serif" font-size="6" fill="#777" letter-spacing="0.3" font-weight="300">SARL</text>
+  </g>
+</svg>
