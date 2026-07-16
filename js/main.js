@@ -450,15 +450,21 @@ document.addEventListener('DOMContentLoaded', function () {
     var originalText = btn.textContent;
     var sendingText = { en: 'Sending...', fr: 'Envoi...', pt: 'Enviando...', de: 'Senden...', es: 'Enviando...', ar: 'جاري الإرسال...', zh: '发送中...', ru: 'Отправка...' };
     var sentText = { en: 'Message Sent ✓', fr: 'Message Envoyé ✓', pt: 'Mensagem Enviada ✓', de: 'Gesendet ✓', es: 'Mensaje Enviado ✓', ar: 'تم الإرسال ✓', zh: '已发送 ✓', ru: 'Отправлено ✓' };
+    var errorText = { en: 'Error. Try email instead.', fr: 'Erreur. Envoyez un email.', pt: 'Erro. Envie um email.', de: 'Fehler. Bitte E-Mail.', es: 'Error. Envíe un email.', ar: 'خطأ. أرسل بريدًا', zh: '错误，请改用邮件', ru: 'Ошибка. Напишите на email.' };
     btn.textContent = sendingText[currentLang] || 'Sending...';
     btn.disabled = true;
-    setTimeout(function () {
-      btn.textContent = sentText[currentLang] || 'Message Sent ✓';
-      setTimeout(function () {
-        btn.textContent = originalText;
-        btn.disabled = false;
-      }, 3000);
-    }, 1500);
+    var formData = new FormData(this);
+    fetch(this.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } })
+      .then(function (res) { if (res.ok) return res.json(); else throw new Error('Formspree error'); })
+      .then(function () {
+        btn.textContent = sentText[currentLang] || 'Message Sent ✓';
+        document.getElementById('contactForm').reset();
+        setTimeout(function () { btn.textContent = originalText; btn.disabled = false; }, 4000);
+      })
+      .catch(function () {
+        btn.textContent = errorText[currentLang] || 'Error. Try email instead.';
+        setTimeout(function () { btn.textContent = originalText; btn.disabled = false; }, 4000);
+      });
   });
 
   /* ---- Gallery & Lightbox ---- */
