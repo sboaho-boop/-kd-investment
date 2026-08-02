@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 540" width="400" height="540">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#171717"/>
+      <stop offset="55%" stop-color="#101010"/>
+      <stop offset="100%" stop-color="#0A0A0A"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5D980"/>
+      <stop offset="50%" stop-color="#D4A847"/>
+      <stop offset="100%" stop-color="#B8922E"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="540" fill="url(#bg)"/>
+
+  <!-- decorative corners -->
+  <path d="M0 0 H24 V0 H0 Z" fill="url(#gold)" opacity="0"/>
+  <path d="M0 0 L26 0 L0 26 Z" fill="url(#gold)" opacity="0.15"/>
+  <path d="M400 0 L374 0 L400 26 Z" fill="url(#gold)" opacity="0.15"/>
+  <path d="M0 540 L26 540 L0 514 Z" fill="url(#gold)" opacity="0.15"/>
+  <path d="M400 540 L374 540 L400 514 Z" fill="url(#gold)" opacity="0.15"/>
+
+  <!-- soft gold glow -->
+  <circle cx="200" cy="225" r="160" fill="url(#gold)" opacity="0.05"/>
+
+  <!-- portrait ring -->
+  <circle cx="200" cy="225" r="95" fill="none" stroke="url(#gold)" stroke-width="1.5" opacity="0.55"/>
+  <circle cx="200" cy="225" r="86" fill="none" stroke="url(#gold)" stroke-width="0.5" opacity="0.28"/>
+
+  <!-- person silhouette -->
+  <circle cx="200" cy="195" r="38" fill="url(#gold)" opacity="0.35"/>
+  <path d="M150 320 Q158 255 200 255 Q242 255 250 320 Q260 335 270 340 L270 355 L130 355 L130 340 Q140 335 150 320 Z" fill="url(#gold)" opacity="0.28"/>
+
+  <!-- small crown accent -->
+  <path d="M200 98 L209 112 L218 100 L224 114 L234 102 L228 122 L172 122 L166 102 L176 114 L182 100 L191 112 Z" fill="url(#gold)" opacity="0.6"/>
+
+  <!-- text -->
+  <text x="200" y="405" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="17" fill="#E8E8E8" letter-spacing="1">Regional Director</text>
+  <rect x="160" y="422" width="80" height="1" fill="url(#gold)" opacity="0.4"/>
+  <text x="200" y="448" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#999" letter-spacing="2">KD INVESTMENT</text>
+  <text x="200" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="7.5" fill="#666" letter-spacing="1">Photo coming soon</text>
+</svg>
