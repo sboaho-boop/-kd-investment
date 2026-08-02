@@ -823,6 +823,96 @@ body {
   border: 1px solid rgba(212,168,71,0.2);
 }
 
+/* ---- Directors ---- */
+.directors {
+  background: var(--black-2);
+}
+.directors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+.director-card {
+  background: var(--black);
+  border: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.director-card:hover {
+  border-color: rgba(212,168,71,0.25);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+.director-photo {
+  height: 300px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #141414, #1A1A1A);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.director-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.director-card:hover .director-photo img {
+  transform: scale(1.04);
+}
+.director-info {
+  padding: 24px;
+  flex: 1;
+}
+.director-info h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.director-role {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.director-countries {
+  color: var(--gray-light);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  border-left: 2px solid rgba(212,168,71,0.3);
+  padding-left: 10px;
+}
+.director-contact {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.director-contact p {
+  font-size: 0.8rem;
+}
+.director-contact i {
+  color: var(--gold);
+  margin-right: 8px;
+  width: 14px;
+}
+.director-contact a {
+  color: var(--gray-light);
+  text-decoration: none;
+  transition: var(--transition);
+}
+.director-contact a:hover {
+  color: var(--gold);
+}
+
 /* ---- Partners ---- */
 .partners {
   background: var(--black);

@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* ---- Scroll reveal ---- */
-  const revealElements = document.querySelectorAll('.service-card, .country-card, .partner-card, .about-grid, .contact-grid, .section-header, .about-stats, .gallery-item, .gallery-add');
+  const revealElements = document.querySelectorAll('.service-card, .country-card, .director-card, .partner-card, .about-grid, .contact-grid, .section-header, .about-stats, .gallery-item, .gallery-add');
   var revealObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var translations = {
     en: {
       'nav.home': 'Home', 'nav.about': 'About', 'nav.services': 'Services',
-      'nav.projects': 'Projects', 'nav.countries': 'Countries', 'nav.partners': 'Partners', 'nav.contact': 'Contact',
+      'nav.projects': 'Projects', 'nav.countries': 'Countries', 'nav.directors': 'Directors', 'nav.partners': 'Partners', 'nav.contact': 'Contact',
       'hero.badge': 'Since 2019',
       'hero.title': 'Global Investment Fund Raising<br>&amp; <span class="gold-text">Project Management</span>',
       'hero.subtitle': 'Connecting investors, businesses, and strategic partners across Africa and beyond.',
@@ -142,6 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
       'countries.tag': 'Our Reach', 'countries.title': 'Countries of Operation',
       'projects.tag': 'Our Work', 'projects.title': 'Project Gallery', 'projects.desc': 'A selection of projects and initiatives we have supported across Africa and international markets.',
       'countries.hq': 'Headquarters', 'countries.branch': 'Branch Office',
+      'directors.tag': 'Our Team', 'directors.title': 'Regional Directors', 'directors.desc': 'Our regional directors lead operations across their territories, ensuring KD Investment delivers excellence wherever we operate.',
       'partners.tag': 'Our Network', 'partners.title': 'Strategic Partners',
       'partners.disclaimer': 'Logos displayed with authorization. All trademarks belong to their respective owners.',
       'contact.tag': 'Get In Touch', 'contact.title': 'Contact Us',
@@ -152,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     fr: {
       'nav.home': 'Accueil', 'nav.about': 'À Propos', 'nav.services': 'Services',
-      'nav.projects': 'Projets', 'nav.countries': 'Pays', 'nav.partners': 'Partenaires', 'nav.contact': 'Contact',
+      'nav.projects': 'Projets', 'nav.countries': 'Pays', 'nav.directors': 'Directeurs', 'nav.partners': 'Partenaires', 'nav.contact': 'Contact',
       'hero.badge': 'Depuis 2019',
       'hero.title': 'Solutions Globales de<br> <span class="gold-text">Levée de Fonds</span> &amp; Gestion de Projets',
       'hero.subtitle': 'Connecter investisseurs, entreprises et partenaires stratégiques à travers l\'Afrique et au-delà.',
@@ -178,6 +179,7 @@ document.addEventListener('DOMContentLoaded', function () {
       'countries.tag': 'Notre Présence', 'countries.title': 'Pays d\'Intervention',
       'projects.tag': 'Nos Réalisations', 'projects.title': 'Galerie de Projets', 'projects.desc': 'Une sélection de projets et initiatives que nous avons soutenus à travers l\'Afrique et les marchés internationaux.',
       'countries.hq': 'Siège Social', 'countries.branch': 'Bureau Secondaire',
+      'directors.tag': 'Notre Équipe', 'directors.title': 'Directeurs Régionaux', 'directors.desc': 'Nos directeurs régionaux dirigent les opérations sur leurs territoires, garantissant que KD Investment offre l\'excellence partout où nous opérons.',
       'partners.tag': 'Notre Réseau', 'partners.title': 'Partenaires Stratégiques',
       'partners.disclaimer': 'Logos affichés avec autorisation. Toutes les marques appartiennent à leurs propriétaires respectifs.',
       'contact.tag': 'Contactez-Nous', 'contact.title': 'Nous Contacter',
@@ -188,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     pt: {
       'nav.home': 'Início', 'nav.about': 'Sobre', 'nav.services': 'Serviços',
-      'nav.projects': 'Projetos', 'nav.countries': 'Países', 'nav.partners': 'Parceiros', 'nav.contact': 'Contacto',
+      'nav.projects': 'Projetos', 'nav.countries': 'Países', 'nav.directors': 'Diretores', 'nav.partners': 'Parceiros', 'nav.contact': 'Contacto',
       'hero.badge': 'Desde 2019',
       'hero.title': 'Captação Global de Recursos<br>&amp; <span class="gold-text">Gestão de Projetos</span>',
       'hero.subtitle': 'Conectando investidores, empresas e parceiros estratégicos em África e no mundo.',
@@ -214,6 +216,7 @@ document.addEventListener('DOMContentLoaded', function () {
       'countries.tag': 'Nossa Presença', 'countries.title': 'Países de Atuação',
       'projects.tag': 'Nosso Trabalho', 'projects.title': 'Galeria de Projetos', 'projects.desc': 'Uma seleção de projetos e iniciativas que apoiamos em África e nos mercados internacionais.',
       'countries.hq': 'Sede', 'countries.branch': 'Filial',
+      'directors.tag': 'Nossa Equipe', 'directors.title': 'Diretores Regionais', 'directors.desc': 'Os nossos diretores regionais lideram as operações nos seus territórios, garantindo que a KD Investment oferece excelência onde quer que operemos.',
       'partners.tag': 'Nossa Rede', 'partners.title': 'Parceiros Estratégicos',
       'partners.disclaimer': 'Logotipos exibidos com autorização. Todas as marcas pertencem aos seus respetivos proprietários.',
       'contact.tag': 'Fale Connosco', 'contact.title': 'Contacte-nos',
@@ -224,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     de: {
       'nav.home': 'Start', 'nav.about': 'Über uns', 'nav.services': 'Leistungen',
-      'nav.projects': 'Projekte', 'nav.countries': 'Länder', 'nav.partners': 'Partner', 'nav.contact': 'Kontakt',
+      'nav.projects': 'Projekte', 'nav.countries': 'Länder', 'nav.directors': 'Direktoren', 'nav.partners': 'Partner', 'nav.contact': 'Kontakt',
       'hero.badge': 'Seit 2019',
       'hero.title': 'Globale Investment-Finanzierung<br>&amp; <span class="gold-text">Projektmanagement</span>',
       'hero.subtitle': 'Wir verbinden Investoren, Unternehmen und strategische Partner in Afrika und darüber hinaus.',
@@ -250,6 +253,7 @@ document.addEventListener('DOMContentLoaded', function () {
       'countries.tag': 'Unsere Reichweite', 'countries.title': 'Geschäftsländer',
       'projects.tag': 'Unsere Arbeit', 'projects.title': 'Projektgalerie', 'projects.desc': 'Eine Auswahl von Projekten und Initiativen, die wir in Afrika und internationalen Märkten unterstützt haben.',
       'countries.hq': 'Hauptsitz', 'countries.branch': 'Zweigstelle',
+      'directors.tag': 'Unser Team', 'directors.title': 'Regionaldirektoren', 'directors.desc': 'Unsere Regionaldirektoren leiten die Geschäfte in ihren Gebieten und sorgen dafür, dass KD Investment überall Exzellenz liefert.',
       'partners.tag': 'Unser Netzwerk', 'partners.title': 'Strategische Partner',
       'partners.disclaimer': 'Logos mit Genehmigung angezeigt. Alle Marken gehören ihren jeweiligen Inhabern.',
       'contact.tag': 'Kontakt', 'contact.title': 'Kontaktieren Sie uns',
@@ -260,7 +264,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     es: {
       'nav.home': 'Inicio', 'nav.about': 'Nosotros', 'nav.services': 'Servicios',
-      'nav.projects': 'Proyectos', 'nav.countries': 'Países', 'nav.partners': 'Socios', 'nav.contact': 'Contacto',
+      'nav.projects': 'Proyectos', 'nav.countries': 'Países', 'nav.directors': 'Directores', 'nav.partners': 'Socios', 'nav.contact': 'Contacto',
       'hero.badge': 'Desde 2019',
       'hero.title': 'Captación Global de Fondos<br>&amp; <span class="gold-text">Gestión de Proyectos</span>',
       'hero.subtitle': 'Conectando inversores, empresas y socios estratégicos en África y más allá.',
@@ -286,6 +290,7 @@ document.addEventListener('DOMContentLoaded', function () {
       'countries.tag': 'Nuestro Alcance', 'countries.title': 'Países de Operación',
       'projects.tag': 'Nuestro Trabajo', 'projects.title': 'Galería de Proyectos', 'projects.desc': 'Una selección de proyectos e iniciativas que hemos apoyado en África y mercados internacionales.',
       'countries.hq': 'Oficina Central', 'countries.branch': 'Sucursal',
+      'directors.tag': 'Nuestro Equipo', 'directors.title': 'Directores Regionales', 'directors.desc': 'Nuestros directores regionales lideran las operaciones en sus territorios, asegurando que KD Investment ofrezca excelencia dondequiera que operemos.',
       'partners.tag': 'Nuestra Red', 'partners.title': 'Socios Estratégicos',
       'partners.disclaimer': 'Logotipos mostrados con autorización. Todas las marcas pertenecen a sus respectivos dueños.',
       'contact.tag': 'Póngase en Contacto', 'contact.title': 'Contáctenos',
@@ -296,7 +301,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     ar: {
       'nav.home': 'الرئيسية', 'nav.about': 'عن الشركة', 'nav.services': 'الخدمات',
-      'nav.projects': 'مشاريع', 'nav.countries': 'الدول', 'nav.partners': 'الشركاء', 'nav.contact': 'اتصل بنا',
+      'nav.projects': 'مشاريع', 'nav.countries': 'الدول', 'nav.directors': 'المديرون', 'nav.partners': 'الشركاء', 'nav.contact': 'اتصل بنا',
       'hero.badge': 'منذ 2019',
       'hero.title': 'جمع الاستثمارات العالمية<br>&amp; <span class="gold-text">إدارة المشاريع</span>',
       'hero.subtitle': 'ربط المستثمرين والشركات والشركاء الاستراتيجيين عبر أفريقيا وخارجها.',
@@ -322,6 +327,7 @@ document.addEventListener('DOMContentLoaded', function () {
       'countries.tag': 'نطاقنا', 'countries.title': 'دول التشغيل',
       'projects.tag': 'أعمالنا', 'projects.title': 'معرض المشاريع', 'projects.desc': 'مجموعة مختارة من المشاريع والمبادرات التي دعمناها عبر أفريقيا والأسواق الدولية.',
       'countries.hq': 'المقر الرئيسي', 'countries.branch': 'فرع',
+      'directors.tag': 'فريقنا', 'directors.title': 'المديرون الإقليميون', 'directors.desc': 'يقود مدراؤنا الإقليميون العمليات في مناطقهم، لضمان أن تقدم KD Investment التميز أينما عملنا.',
       'partners.tag': 'شبكتنا', 'partners.title': 'الشركاء الاستراتيجيون',
       'partners.disclaimer': 'يتم عرض الشعارات بإذن. جميع العلامات التجارية مملوكة لأصحابها.',
       'contact.tag': 'تواصل معنا', 'contact.title': 'اتصل بنا',
@@ -332,7 +338,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     zh: {
       'nav.home': '首页', 'nav.about': '关于我们', 'nav.services': '服务',
-      'nav.projects': '项目', 'nav.countries': '国家', 'nav.partners': '合作伙伴', 'nav.contact': '联系我们',
+      'nav.projects': '项目', 'nav.countries': '国家', 'nav.directors': '区域总监', 'nav.partners': '合作伙伴', 'nav.contact': '联系我们',
       'hero.badge': '自2019年',
       'hero.title': '全球投资融资<br>&amp; <span class="gold-text">项目管理</span>',
       'hero.subtitle': '连接非洲及全球的投资者、企业和战略合作伙伴。',
@@ -358,6 +364,7 @@ document.addEventListener('DOMContentLoaded', function () {
       'countries.tag': '我们的覆盖', 'countries.title': '运营国家',
       'projects.tag': '我们的工作', 'projects.title': '项目展示', 'projects.desc': '我们在非洲及国际市场支持的项目和倡议精选。',
       'countries.hq': '总部', 'countries.branch': '分公司',
+      'directors.tag': '我们的团队', 'directors.title': '区域总监', 'directors.desc': '我们的区域总监在其所在地区领导运营，确保KD Investment在业务所在之处提供卓越服务。',
       'partners.tag': '我们的网络', 'partners.title': '战略合作伙伴',
       'partners.disclaimer': '标识经授权展示。所有商标归各自所有者所有。',
       'contact.tag': '联系我们', 'contact.title': '联系我们',
@@ -368,7 +375,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     ru: {
       'nav.home': 'Главная', 'nav.about': 'О нас', 'nav.services': 'Услуги',
-      'nav.projects': 'Проекты', 'nav.countries': 'Страны', 'nav.partners': 'Партнёры', 'nav.contact': 'Контакты',
+      'nav.projects': 'Проекты', 'nav.countries': 'Страны', 'nav.directors': 'Директора', 'nav.partners': 'Партнёры', 'nav.contact': 'Контакты',
       'hero.badge': 'С 2019 г.',
       'hero.title': 'Глобальный сбор инвестиций<br>&amp; <span class="gold-text">Управление проектами</span>',
       'hero.subtitle': 'Объединяем инвесторов, компании и стратегических партнёров в Африке и за её пределами.',
@@ -394,6 +401,7 @@ document.addEventListener('DOMContentLoaded', function () {
       'countries.tag': 'Наше присутствие', 'countries.title': 'Страны деятельности',
       'projects.tag': 'Наши работы', 'projects.title': 'Галерея проектов', 'projects.desc': 'Подборка проектов и инициатив, которые мы поддержали в Африке и на международных рынках.',
       'countries.hq': 'Штаб-квартира', 'countries.branch': 'Филиал',
+      'directors.tag': 'Наша команда', 'directors.title': 'Региональные директора', 'directors.desc': 'Наши региональные директора руководят операциями на своих территориях, гарантируя, что KD Investment обеспечивает превосходство везде, где мы работаем.',
       'partners.tag': 'Наша сеть', 'partners.title': 'Стратегические партнёры',
       'partners.disclaimer': 'Логотипы отображаются с разрешения. Все товарные знаки принадлежат их владельцам.',
       'contact.tag': 'Свяжитесь с нами', 'contact.title': 'Контакты',
